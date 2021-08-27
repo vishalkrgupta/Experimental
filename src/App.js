@@ -12,8 +12,12 @@ class App extends React.Component {
   }
 
   handleClick = () => {
-    this.setState({meaningOfLife:this.state.meaningOfLife+1}, ()=> console.log(this.state.meaningOfLife))
-    
+    this.setState((prevState, prevProps) => {
+      return {
+        meaningOfLife: this.state.meaningOfLife + 1
+      }
+    }, () => console.log(this.state.meaningOfLife))
+
   }
 
   render() {
